@@ -1,0 +1,79 @@
+<%= render 'partials/user_nav' %>
+
+<!--
+<div class="container">
+	<div class="dash-name">
+		<div class="row">
+			<div class="col-md-10">
+				<h1><span class="glyphicon glyphicon-user"></span> Aaron Johnson</h1>
+			</div>
+			<div class="col-md-2">
+				<div class="btn-group pull-right btn-add">
+  				<button type="button" class="btn btn-blue btn-lg">Actions</button>
+  				<button type="button" class="btn btn-blue btn-lg dropdown-toggle" data-toggle="dropdown">
+   				<span class="caret"></span>
+   				<span class="sr-only">Toggle Dropdown</span>
+  				</button>
+  				<ul class="dropdown-menu" role="menu">
+   					<li><a href="#">Shopping List</a></li>
+  					<li><a href="#">Quick Link</a></li>
+    				<li><a href="#">Transactions</a></li>
+    				<li class="divider"></li>
+    				<li><a href="#">Separated link</a></li>
+  				</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+-->
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2">
+			<div class="profile-img">
+				<%= image_tag @user.avatar_url(:profile) %>
+			</div>
+
+
+		</div>
+		<div class="col-md-7">
+			<div class="profile-info">
+				<h1>
+					<%= "#{@user.first_name} #{@user.last_name}" %>
+				</h1>
+				
+				<h4>Spring Hill, Tennessee</h4>
+				<% if @user == current_user %>
+				<p class="edit-profile"><%= link_to "Edit Profile", edit_user_registration_path %></p>
+				<% end %>
+				<div class="btn-group pull-left btn-add1">
+						<button type="button" class="btn btn-dark btn-lg">Followers: <%= @user.followers_count %></button>
+					</div>
+					<div class="pull-left btn-add1">
+						<button type="button" class="btn btn-dark btn-lg">Following: <%= @user.follow_count %></button>
+					</div>
+						
+				<% if user_signed_in? %>
+				<div id="follow_user<%= @user.id %>">
+					<%= render partial: "follow_user", locals: { user: @user } %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<!-- 
+			<div class="savings-box">
+					<h3 class="avg-savings">Average Savings</h3>
+					<h1 class="percentage">45%</h1>
+					<p class="trans">Transaction Count: 32</p>
+					<!--<div class="add-transaction-container">
+							<p class="btn btn-xs btn-default"><span class="glyphicon-small glyphicon-plus"></span> Add Transaction</p>
+						</div>
+			</div> -->
+		</div>
+	</div>
+</div>

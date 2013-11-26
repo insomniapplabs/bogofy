@@ -1,0 +1,145 @@
+<%= render 'partials/user_nav' %>
+
+<div class="container">
+	<div class="dash-name">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Transactions</h1>
+			</div>
+			<div class="col-md-6">
+				<div class="btn-group pull-right btn-add">
+  				<button type="button" class="btn btn-blue btn-lg">Actions</button>
+  				<button type="button" class="btn btn-blue btn-lg dropdown-toggle" data-toggle="dropdown">
+   				<span class="caret"></span>
+   				<span class="sr-only">Toggle Dropdown</span>
+  				</button>
+  				<ul class="dropdown-menu" role="menu">
+   					<li><a href="#">Shopping List</a></li>
+  					<li><a href="#">Quick Link</a></li>
+    				<li><a href="#">Transactions</a></li>
+    				<li class="divider"></li>
+    				<li><a href="#">Separated link</a></li>
+  				</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="savings-box">
+				<h3 class="avg-savings">Average Savings</h3>
+				<% if @transactions.blank? %>
+					<h1 class="percentage">0%</h1>
+				<% else %>
+
+				<h1 class="percentage"><%=  number_to_percentage total_average.ceil, precision: 0 %></h1>
+
+				<% end %>
+				<p class="trans">Transaction Count: <%= current_user.transactions.count %></p>
+			
+			</div>
+			<div class="sidebox">
+					<div class="sidebox-head">
+						<h5><span class="glyphicon-medium glyphicon-list"></span> Shopping Lists</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @lists.present? %>
+						<ul>
+						<% for list in @lists %>
+							<li><%= link_to list.name, list, class: "brown-link" %></li>
+						<% end %>
+						</ul>
+						<% else %>
+							<p>You currently have no shopping lists started!</p>
+						<% end %>
+						<div class="add-list-form">
+							<%= form_for @list do |f| %>
+								<div class="form-group">
+									<p><%= f.text_field :name, placeholder: "List Name", class: "form-control input-sm" %></p>
+								</div>
+								<%= f.submit "Add List", class: "btn btn-primary btn-block" %>
+							<% end %>
+						</div>
+						<div class="add-list-container">
+							<p class="gray cursor"><span class="glyphicon-small glyphicon-plus"></span> Add New List</p>
+						</div>
+					</div>
+				</div>
+				<div class="sidebox">
+					<div class="sidebox-head">
+						<h5><span class="glyphicon-medium glyphicon-link"></span> Quick Links</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @links.present? %>
+						<ul>
+							<% for link in @links %>
+								<li><%= link_to link.link_name, link.link_url, target: "_blank", class: "brown-link" %></li>
+							<% end %>
+						</ul>
+						<% else %>
+							<p>You need to add some links!</p>
+						<% end %>
+						<div class="add-link-form">
+							<%= form_for @link do |f| %>
+								<div class="form-group">
+									<p><%= f.text_field :link_name, placeholder: "Link Name", class: "form-control input-sm" %></p>
+								</div>
+								<div class="form-group">
+									<p><%= f.text_field :link_url, placeholder: "http://example.com", class: "form-control input-sm" %></p>
+								</div>
+								<%= f.submit "Add Link", class: "btn btn-primary btn-block" %>
+							<% end %>
+						</div>
+						<div class="add-link-container">
+							<!--<p class="btn btn-xs btn-default"><span class="glyphicon-small glyphicon-plus"></span> Add New Link</p>-->
+							<p class="gray cursor"><span class="glyphicon-small glyphicon-plus"></span> Add New Link</p>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-8">
+					<h3>Transactions for Month of </h3>
+				</div>
+				<div class="col-md-4">
+					&nbsp;
+				</div>
+			</div>
+
+			<table class="table table-condensed table-hover">
+				<tr>
+					<th>Date</th>
+					<th class="text-center">Store</th>
+					<th class="text-center">Amount Spent</th>
+					<th class="text-center">Amount Saved</th>
+					<th class="text-center">% Savings</th>
+				</tr>
+				<% for transaction in @transactions %>
+				<tr>
+					<td><%= transaction.date.strftime('%b %d, %y') %></td>
+					<td class="text-center"><%= transaction.store.name %></td>
+					<td class="text-center"><%= number_to_currency transaction.spent %></td>
+					<td class="text-center"><%= number_to_currency transaction.saved %></td>
+					<td class="text-center"><%= number_to_percentage transaction.average_savings, precision: 0 %></td>
+				</tr>
+				<% end %>
+			</table>
+
+			<h5 class="monthly-totals">
+				<span class="monthly-totals-sum">MONTHLY TOTALS:</span> 
+				Spent: <span class="monthly-totals-sum"><%= number_to_currency @transactions.sum(:spent) %></span>
+				Saved: <span class="monthly-totals-sum-np"><%= number_to_currency @transactions.sum(:saved) %></span>
+				<!-- Average Savings: <span class="monthly-totals-sum-np"></span> -->
+			</h5>
+
+			<%= link_to "Back to Transactions", transactions_path %>
+
+
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,148 @@
+<div class="dashboard-container">
+	<div class="container">
+		<div class="dash-name">
+			<div class="row">
+				<div class="col-md-6">
+					<h1>Hello there, <%= "#{current_user.first_name}" + "!" %></h1>
+				</div>
+				<div class="col-md-6">
+
+					<div class="btn-group pull-right btn-add">
+
+  					<button type="button" class="btn btn-blue btn-lg">Add</button>
+  					<button type="button" class="btn btn-blue btn-lg dropdown-toggle" data-toggle="dropdown">
+   					<span class="caret"></span>
+   				 	<span class="sr-only">Toggle Dropdown</span>
+  					</button>
+  					<ul class="dropdown-menu" role="menu">
+   						<li><a href="#">Shopping List</a></li>
+  						<li><a href="#">Quick Link</a></li>
+    					<li><a href="#">Transactions</a></li>
+    					<li class="divider"></li>
+    					<li><a href="#">Separated link</a></li>
+  					</ul>
+					</div>
+					<div class="btn-group pull-right btn-add">
+						<button type="button" class="btn btn-dark btn-lg">Followers: <%= current_user.followers_count %></button>
+					</div>
+					<div class="pull-right btn-add">
+						<button type="button" class="btn btn-dark btn-lg">Following: <%= current_user.follow_count %></button>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="savings-box">
+					<h3 class="avg-savings">Average Savings</h3>
+					<% if current_user.transactions.count == 0 %>
+					<h1 class="percentage">0%</h1>
+					<% else %>
+					<h1 class="percentage"><%=  number_to_percentage total_average.ceil, precision: 0 %></h1>
+					<% end %>
+				<p class="trans">Transaction Count: <%= current_user.transactions.count %></p>
+					
+				</div>
+				<div class="sidebox">
+					<div class="sidebox-head">
+						<h5><span class="glyphicon-medium glyphicon-list"></span> Shopping Lists</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @lists.present? %>
+						<ul>
+						<% for list in @lists %>
+							<li><%= link_to list.name, list, class: "brown-link" %></li>
+						<% end %>
+						</ul>
+						<% else %>
+							<p>You currently have no shopping lists started!</p>
+						<% end %>
+						<div class="add-list-form">
+							<%= form_for @list do |f| %>
+								<div class="form-group">
+									<p><%= f.text_field :name, placeholder: "List Name", class: "form-control input-sm" %></p>
+								</div>
+								<%= f.submit "Add List", class: "btn btn-primary btn-block" %>
+							<% end %>
+						</div>
+						<div class="add-list-container">
+							<p class="gray cursor"><span class="glyphicon-small glyphicon-plus"></span> Add New List</p>
+						</div>
+					</div>
+				</div>
+				<div class="sidebox">
+					<div class="sidebox-head">
+						<h5><span class="glyphicon-medium glyphicon-link"></span> Quick Links</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @links.present? %>
+						<ul>
+							<% for link in @links %>
+								<li><%= link_to link.link_name, link.link_url, target: "_blank", class: "brown-link" %></li>
+							<% end %>
+						</ul>
+						<% else %>
+							<p>You need to add some links!</p>
+						<% end %>
+						<div class="add-link-form">
+							<%= form_for @link do |f| %>
+								<div class="form-group">
+									<p><%= f.text_field :link_name, placeholder: "Link Name", class: "form-control input-sm" %></p>
+								</div>
+								<div class="form-group">
+									<p><%= f.text_field :link_url, placeholder: "http://example.com", class: "form-control input-sm" %></p>
+								</div>
+								<%= f.submit "Add Link", class: "btn btn-primary btn-block" %>
+							<% end %>
+						</div>
+						<div class="add-link-container">
+							<!--<p class="btn btn-xs btn-default"><span class="glyphicon-small glyphicon-plus"></span> Add New Link</p>-->
+							<p class="gray cursor"><span class="glyphicon-small glyphicon-plus"></span> Add New Link</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="sidebox-advert">
+					<%= image_tag "publix_ad.jpg", class: "ad" %>
+				</div>
+				
+			</div>
+			<div class="col-md-9">
+				<div class="feed">
+					<div class="micro-feed-form">
+						<%= form_for @micropost do |f| %>
+						<div class="form-group-small-bottom">
+						<%= f.text_area :content, placeholder: "Share something with your connections here...", class: "form-control borderless", rows: "1" %>
+						</div>
+							<%= f.submit "Add Post", class: "btn btn-blue btn-sm pull-right" %>					
+						<% end %>
+					</div>
+				<h3 class="recent-activity">Recent Activity</h3>
+				
+
+				<% for micropost in @feed %>
+					<div class="micro-container">
+							<div class="micro-image">
+								<% if micropost.user.avatar_url.present? %>
+								<%= image_tag micropost.user.avatar_url(:thumb), align: "left", class: "img-border" %>
+								<% else %>
+								<%= image_tag 'profile-placeholder.png', align: "left", class: "img-border" %>
+								<% end %>
+							</div>
+							<div class="micro-text-container">
+								<p class="micro-text-hdr"><%= "#{micropost.user.first_name} #{micropost.user.last_name}" %> <span class="pull-right time-ago"><%= time_ago_in_words(micropost.created_at) %> ago</span></p>
+					
+								<p class="micro-text"><%= micropost.content %><p>
+							</div>
+						</div>
+				<% end %>
+			</div>
+
+
+			</div>
+		</div>	
+	</div>
+</div>

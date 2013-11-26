@@ -1,0 +1,46 @@
+<div class="col-md-3">
+				<div class="savings-box">
+					<h3 class="avg-savings">Average Savings</h3>
+					<h1 class="percentage">45%</h1>
+					<p class="trans">Transaction Count: 32</p>
+					<!--<div class="add-transaction-container">
+							<p class="btn btn-xs btn-default"><span class="glyphicon-small glyphicon-plus"></span> Add Transaction</p>
+						</div>-->
+				</div>
+				<div class="sidebox">
+					<div class="sidebox-head">
+						<h5>Shopping Lists</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @lists.present? %>
+						<ul>
+						<% for list in @lists %>
+							<li><%= link_to list.name, list %></li>
+						<% end %>
+						</ul>
+						<% else %>
+							<p>You currently have no shopping lists started!</p>
+						<% end %>
+						
+					</div>
+				</div>
+				<div class="sidebox">
+					<div class="sidebox-head">
+						<h5>Quick Links</h5>
+					</div>
+					<div class="sidebox-main">
+						<% if @links.present? %>
+						<ul>
+							<% for link in @links %>
+								<li><%= link_to link.link_name, link.link_url, target: "_blank" %></li>
+							<% end %>
+						</ul>
+						<% else %>
+							<p>You need to add some links!</p>
+						<% end %>
+						
+						
+					</div>
+				</div>
+				
+			</div>

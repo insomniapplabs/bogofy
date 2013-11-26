@@ -1,0 +1,214 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* HOME ALT STYLES 
+html, body, .wrap { height:100%; }
+.sidebar { position:absolute;top:0;left:0;width:230px;padding:30px 0 40px 35px;color:#a7abb1;z-index:999; }
+body>.wrap{height:auto;min-height:100%;position:relative}
+body { background:url('sidebar2.jpg') left top repeat-y; }
+.main-content { padding:0px
+35px 40px 0;margin-left:305px;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; }
+
+#header 
+h1{display:block;font-size:20px;font-weight:bold;line-height:82px;color:#363F48;margin:0
+50px 0 0;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.small { font-size:.7em;font-weight:normal;padding-left:20px; } */
+html, body { }
+body { padding-top:60px;background:#fff; }
+h1,h2,h3,h4,h5,h6 { /*font-family: 'Open Sans', sans-serif;*/ }
+
+h1,h2,h3,h4,h5,p,li { font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.glyphicon.glyphicon-share-alt { float:right; }
+.glyphicon.glyphicon-trash { float:right;padding:0 0 0 10px; }
+
+
+.dashboard-container { padding:0;margin:0;width:100%;height:100%;overflow:auto; }
+
+.cursor { cursor:pointer; }
+
+.sidebox-advert { background:none;min-height:200px;width:100%;overflow:hidden; }
+.sidebox-advert p { color:white;text-align:center;padding-top:75px; }
+img.ad { width:100%;}
+img.profile-lg { width:100%; }
+
+.sidebox { border-bottom:0px solid #bbb;margin-bottom:40px;border-radius:4px 4px 0 0;padding-left:10px;padding-right:10px; }
+.sidebox-head { background:#fff;border-radius:4px 4px 0 0; }
+.sidebox-head h5 { margin:0;padding:0 0 10px 0;color:#333;text-transform:uppercase;letter-spacing:1px;text-align:left;font-weight:bold;font-size:1.3em; }
+.sidebox-main { padding:0px; }
+.sidebox-main ul { list-style:none;padding-left:10px; }
+.sidebox-main ul li { font-size:16px; }
+.linked { cursor:pointer; }
+.savings-box { background:#182945;border-radius:3px;padding:10px;margin-bottom:30px; }
+.savings-box h3 { margin:0; }
+
+
+.micro-container { overflow:hidden;margin-bottom:10px; }
+.micro-text { margin:0;color:#3B3B3B;}
+.micro-text-hdr { font-weight:bold;font-size:1.1em;margin-bottom:0px;color:#3B3B3B; }
+.btn-add { margin-top:20px;margin-left:20px;}
+.btn-add1 { margin-right:20px; }
+
+.time-ago { font-size:.8em;color:#ccc;font-weight:normal; } 
+.feed { background:#E9E9DF;padding:30px 30px;border-radius:4px; }
+h3.avg-savings { letter-spacing:1px;text-transform:uppercase;text-align:center;font-weight:bold;margin:10px 0 0 0;color: #E8E8F0;font-size:1.4em;letter-spacing:2px; }
+h1.percentage { font-size:6.0em;text-align:center;font-weight:bold;margin: 10px 0 10px 0;color: #A1C436;letter-spacing:3px; }
+p.trans { font-size:1.1em;text-align:center;text-transform:none;font-weight:400;color:#E8E8F0;letter-spacing:1px; }
+h3.recent-activity { padding-bottom:10px;font-weight:300;color:#182945;  }
+
+.gray { color:#ccc; }
+
+img.img-border { border:3px solid #fefefe;border-radius:2px; }
+
+.micro-feed-form { border:1px solid #CCCCCC;border-radius:4px;padding:6px;overflow:hidden;background:#fff; }
+textarea.borderless { border:none;box-shadow:none !important;padding:0;outline:none !important; }
+
+.dash-name { margin-bottom:10px;border-bottom:1px solid #ddd; }
+.dash-name h1 { padding-bottom:10px;font-weight:300; }
+
+
+.micro-image { float:left;width:10%; }
+.micro-text-container { border-left:1px solid #e1e1e1;border-bottom:2px solid #D4D4D4;float:left;width:90%;background:#fff;padding:15px;border-radius:5px;position:relative; }
+.micro-text-container:after { content:' ';position:absolute;border-style:solid;border-width:10px 10px 10px 0;border-color:transparent #fff;display:block;width:0;z-index:1;left:-10px;top:12px; }
+.micro-text-container:before { content:' ';position:absolute;border-style:solid;border-width:11px 11px 11px 0;border-color:transparent #e1e1e1;display:block;width:0;z-index:0;left:-12px;top:11px;}
+
+.left-side { padding:20px;}
+textarea { resize:none; }
+
+.profile-box { background:#3498db;padding:10px;height:150px; }
+.pix16 { font-size:16px; }
+
+a.brown-link:link, a.brown-link:visited { color:#46A5E5;text-decoration:none; }
+a.brown-link:hover, a.brown-link:focus { color:#46A5E5;text-decoration:underline; }
+
+
+.transaction-form-container { background:#E9E9DF;padding:20px 20px;border-radius:4px; }
+.previous-months-container { border-top:1px solid #eee;margin-top:40px; }
+.previous-months-container ul { padding-left:0;list-style:none; }
+.previous-months-container ul li { display:inline-block;padding-right:30px;font-size:1.1em;line-height:1.9; }
+
+h5.monthly-totals { text-align:center;color:#666;padding-top:20px; }
+.monthly-totals-sum { color:#46A5E5;padding-right:10px; }
+.monthly-totals-sum-np { color:#46A5E5;padding-right:0px; }
+
+.list-created-at { font-size:.5em;color:#666; }
+.list-name { color:#46A5E5; }
+.paper-container { background:#FBF6CE;min-height:400px; }
+.paper-img { width:100%;overflow:hidden; }
+.list-top { background:url('legal-top.jpg') repeat;padding:15px 0;margin-top:20px;border-top-left-radius:3px;border-top-right-radius:3px; }
+.list-top h3 { color:#223021;text-align:center;margin:0;text-transform:uppercase;letter-spacing:1px; }
+.list-container { padding:40px 100px 60px 100px; }
+.list-container ul { padding:0;list-style:none; }
+.list-container ul li { font-family: 'Give You Glory', cursive;font-size:2.0em;border-bottom:1px solid #74C7FF;padding:10px 0 0 0; }
+.legal-pad { }
+
+
+
+/*.arrow-down { 
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #3498db;
+    position:absolute;
+    right:45%;
+}*/
+
+
+/* FONTS */
+
+@font-face {
+    font-family: 'pt_sans_narrowregular';
+    src: url('PTN57F-webfont.eot');
+    src: url('PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTN57F-webfont.woff') format('woff'),
+         url('PTN57F-webfont.ttf') format('truetype'),
+         url('PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'pt_sans_narrowbold';
+    src: url('PTN77F-webfont.eot');
+    src: url('PTN77F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTN77F-webfont.woff') format('woff'),
+         url('PTN77F-webfont.ttf') format('truetype'),
+         url('PTN77F-webfont.svg#pt_sans_narrowbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sans_captionregular';
+    src: url('PTC55F-webfont.eot');
+    src: url('PTC55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTC55F-webfont.woff') format('woff'),
+         url('PTC55F-webfont.ttf') format('truetype'),
+         url('PTC55F-webfont.svg#pt_sans_captionregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sans_captionbold';
+    src: url('PTC75F-webfont.eot');
+    src: url('PTC75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTC75F-webfont.woff') format('woff'),
+         url('PTC75F-webfont.ttf') format('truetype'),
+         url('PTC75F-webfont.svg#pt_sans_captionbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sansregular';
+    src: url('PTS55F-webfont.eot');
+    src: url('PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS55F-webfont.woff') format('woff'),
+         url('PTS55F-webfont.ttf') format('truetype'),
+         url('PTS55F-webfont.svg#pt_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sansitalic';
+    src: url('PTS56F-webfont.eot');
+    src: url('PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS56F-webfont.woff') format('woff'),
+         url('PTS56F-webfont.ttf') format('truetype'),
+         url('PTS56F-webfont.svg#pt_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sansbold_italic';
+    src: url('PTS76F-webfont.eot');
+    src: url('PTS76F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS76F-webfont.woff') format('woff'),
+         url('PTS76F-webfont.ttf') format('truetype'),
+         url('PTS76F-webfont.svg#pt_sansbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pt_sansbold';
+    src: url('PTS75F-webfont.eot');
+    src: url('PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
+         url('PTS75F-webfont.woff') format('woff'),
+         url('PTS75F-webfont.ttf') format('truetype'),
+         url('PTS75F-webfont.svg#pt_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
