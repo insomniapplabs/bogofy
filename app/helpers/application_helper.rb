@@ -5,6 +5,17 @@ module ApplicationHelper
 		"http://gravatar.com/avatar/#{gravatar_id}.png?s=48?d=mm"
 	end
 
+	def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 
 
 end

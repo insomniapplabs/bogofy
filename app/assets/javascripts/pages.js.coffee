@@ -8,3 +8,7 @@ jQuery ->
   $(".add-link-container").click ->
   	$(this).remove()
   	$(".add-link-form").show()
+
+ 	$("#btn-sign-up").click ->
+ 		$("#myModal").modal('show')
+

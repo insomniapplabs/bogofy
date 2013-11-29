@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@microposts = current_user.microposts.order('created_at desc')
+		@user_feed = @user.microposts.order('created_at desc')
 	end
 
 	def follow
