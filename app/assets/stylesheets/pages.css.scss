@@ -44,14 +44,14 @@ img.profile-lg { width:100%; }
 .savings-box h3 { margin:0; }
 
 
-.micro-container { overflow:hidden;margin-bottom:10px; }
+.micro-container { overflow:hidden;margin-bottom:7px; }
 .micro-text { margin:0;color:#3B3B3B;}
 .micro-text-hdr { font-weight:bold;font-size:1.1em;margin-bottom:0px;color:#3B3B3B; }
 .btn-add { margin-top:20px;margin-left:20px;}
 .btn-add1 { margin-right:20px; }
 
 .time-ago { font-size:.8em;color:#ccc;font-weight:normal; } 
-.feed { background:#E9E9DF;padding:30px 30px;border-radius:4px; }
+.feed { background:#E9E9DF;padding:12px 12px;border-radius:4px; }
 h3.avg-savings { letter-spacing:1px;text-transform:uppercase;text-align:center;font-weight:bold;margin:10px 0 0 0;color: #E8E8F0;font-size:1.4em;letter-spacing:2px; }
 h1.percentage { font-size:6.0em;text-align:center;font-weight:bold;margin: 10px 0 10px 0;color: #A1C436;letter-spacing:3px; }
 p.trans { font-size:1.1em;text-align:center;text-transform:none;font-weight:400;color:#E8E8F0;letter-spacing:1px; }
@@ -111,7 +111,17 @@ h5.monthly-totals { text-align:center;color:#666;padding-top:20px; }
 .sign-up-btns { margin-top:30px; }
 .sign-up-free { text-transform:uppercase;font-weight:bold;font-size:2.0em;color:#666;text-align:center; }
 
-.drop-login { margin:20px;width:200px; }
+.drop-login { margin:25px;width:245px; }
+.dropdown-blue { background:#182945;color:white; }
+
+.scrollbox { min-height:300px;background:#eee; }
+
+.form-signin { max-width:550px;margin:0 auto;padding:60px 60px 70px 60px;background:#333;border-radius:4px; }
+.signin-hdr { font-size:3em;text-align:center;margin-bottom:50px; }
+
+.tour-img { min-height:300px;background:#111;margin-bottom:50px; }
+
+.forget { color:#fff;margin-bottom:30px;margin-top:0; }
 
 /*.arrow-down { 
     width: 0; 
@@ -125,98 +135,91 @@ h5.monthly-totals { text-align:center;color:#666;padding-top:20px; }
 
 
 /* FONTS */
-
 @font-face {
-    font-family: 'pt_sans_narrowregular';
-    src: url('PTN57F-webfont.eot');
-    src: url('PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTN57F-webfont.woff') format('woff'),
-         url('PTN57F-webfont.ttf') format('truetype'),
-         url('PTN57F-webfont.svg#pt_sans_narrowregular') format('svg');
+    font-family: 'colaborate-boldregular';
+    src: url('ColabBol-webfont.eot');
+    src: url('ColabBol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabBol-webfont.woff') format('woff'),
+         url('ColabBol-webfont.ttf') format('truetype'),
+         url('ColabBol-webfont.svg#colaborate-boldregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-    font-family: 'pt_sans_narrowbold';
-    src: url('PTN77F-webfont.eot');
-    src: url('PTN77F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTN77F-webfont.woff') format('woff'),
-         url('PTN77F-webfont.ttf') format('truetype'),
-         url('PTN77F-webfont.svg#pt_sans_narrowbold') format('svg');
+    font-family: 'colaboratelightregular';
+    src: url('ColabLig-webfont.eot');
+    src: url('ColabLig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabLig-webfont.woff') format('woff'),
+         url('ColabLig-webfont.ttf') format('truetype'),
+         url('ColabLig-webfont.svg#colaboratelightregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
 @font-face {
-    font-family: 'pt_sans_captionregular';
-    src: url('PTC55F-webfont.eot');
-    src: url('PTC55F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTC55F-webfont.woff') format('woff'),
-         url('PTC55F-webfont.ttf') format('truetype'),
-         url('PTC55F-webfont.svg#pt_sans_captionregular') format('svg');
+    font-family: 'colaborate-mediumregular';
+    src: url('ColabMed-webfont.eot');
+    src: url('ColabMed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabMed-webfont.woff') format('woff'),
+         url('ColabMed-webfont.ttf') format('truetype'),
+         url('ColabMed-webfont.svg#colaborate-mediumregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
 @font-face {
-    font-family: 'pt_sans_captionbold';
-    src: url('PTC75F-webfont.eot');
-    src: url('PTC75F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTC75F-webfont.woff') format('woff'),
-         url('PTC75F-webfont.ttf') format('truetype'),
-         url('PTC75F-webfont.svg#pt_sans_captionbold') format('svg');
+    font-family: 'colaborate-regularregular';
+    src: url('ColabReg-webfont.eot');
+    src: url('ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabReg-webfont.woff') format('woff'),
+         url('ColabReg-webfont.ttf') format('truetype'),
+         url('ColabReg-webfont.svg#colaborate-regularregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
 @font-face {
-    font-family: 'pt_sansregular';
-    src: url('PTS55F-webfont.eot');
-    src: url('PTS55F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTS55F-webfont.woff') format('woff'),
-         url('PTS55F-webfont.ttf') format('truetype'),
-         url('PTS55F-webfont.svg#pt_sansregular') format('svg');
+    font-family: 'colaborate-thinregular';
+    src: url('ColabThi-webfont.eot');
+    src: url('ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ColabThi-webfont.woff') format('woff'),
+         url('ColabThi-webfont.ttf') format('truetype'),
+         url('ColabThi-webfont.svg#colaborate-thinregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
-@font-face {
-    font-family: 'pt_sansitalic';
-    src: url('PTS56F-webfont.eot');
-    src: url('PTS56F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTS56F-webfont.woff') format('woff'),
-         url('PTS56F-webfont.ttf') format('truetype'),
-         url('PTS56F-webfont.svg#pt_sansitalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
-@font-face {
-    font-family: 'pt_sansbold_italic';
-    src: url('PTS76F-webfont.eot');
-    src: url('PTS76F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTS76F-webfont.woff') format('woff'),
-         url('PTS76F-webfont.ttf') format('truetype'),
-         url('PTS76F-webfont.svg#pt_sansbold_italic') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
-@font-face {
-    font-family: 'pt_sansbold';
-    src: url('PTS75F-webfont.eot');
-    src: url('PTS75F-webfont.eot?#iefix') format('embedded-opentype'),
-         url('PTS75F-webfont.woff') format('woff'),
-         url('PTS75F-webfont.ttf') format('truetype'),
-         url('PTS75F-webfont.svg#pt_sansbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

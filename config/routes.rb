@@ -28,6 +28,10 @@ Applicationbogofy::Application.routes.draw do
       get :unfollow
     end
   end
+
+
+  get "take-a-tour", to: "pages#tour", as: "tour"
+
   get "pages/home"
   get "pages/home_alt"
   root to: 'pages#home'

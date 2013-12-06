@@ -5754,7 +5754,7 @@ body.modal-open,
 }
 
 .modal-backdrop.in {
-  opacity: 0.8;
+  opacity: 0.9;
   filter: alpha(opacity=50);
 }
 

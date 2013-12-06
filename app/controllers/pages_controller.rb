@@ -18,9 +18,11 @@ class PagesController < ApplicationController
       following_ids << current_user
       @feed = Micropost.where(user_id: following_ids ).order("created_at desc")
     end
-
   end
 
+  def tour
+
+  end
 
 end
 

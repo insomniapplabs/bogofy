@@ -1691,6 +1691,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         .addClass('active')
     }
 
+    if (active.parent('.dropdown-menu').length)  {
+      active = active
+        .closest('li.dropdown')
+        .addClass('active')
+    }
+
     active.trigger('activate')
   }
 

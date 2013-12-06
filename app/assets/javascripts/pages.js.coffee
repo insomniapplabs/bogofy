@@ -4,6 +4,7 @@ jQuery ->
   	$(this).remove()
   	$(".add-list-form").show()
 
+
   $(".add-link-form").hide()
   $(".add-link-container").click ->
   	$(this).remove()
